@@ -60,8 +60,79 @@ a:hover
 
 
 
+
+
+#projects {
+    margin-left: auto;
+    margin-right:auto;
+    width: 720px;
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+}
+
+.project_preview{
+   margin-top: 10px;
+   margin-bottom: 10px;
+    position: relative;  
+    
+}
+
+.project_preview img {
+     width: 340px;
+     height: 340px;
+     object-fit:cover;    
+     transition: filter 0.2s;
+     filter: grayscale(0);
+    
+}
+
+.project_preview img:hover{   
+    filter: grayscale(1); 
+}
+
+
+#projects h1 {
+    
+}
+
+.caption
+{
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    font-weight: 100;
+    font-size: 15px;
+    
+}
+
+#about_page{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right:auto;
+    width: 720px;
+    display: grid;
+    grid-template-columns: auto auto;
+   
+}
+
+#headshot{
+    
+    width: 350px;
+    
+}
+#headshot img{
+    
+    width: 100%;
+    
+}
+
 #intro_paragraph{
-    max-width: 500px;
+    
+    width: 350px;
     text-align: justify;
     margin-left: auto;
     margin-right: auto;
@@ -69,38 +140,26 @@ a:hover
     word-wrap: break-word;
 }
 
-#projects {
-    margin-top: 100px;
+#project_page{
+    max-width: 720px;
+    text-align: center;
     margin-left: auto;
-    margin-right:auto;
-    width: 720px;
-    display: grid;
-    grid-template-columns: auto;
-    font-size: 12px;
+    margin-right: auto;
 }
 
-.project_preview{
-    padding:50px 30px 50px 30px;    
-}
-
-.project_preview img {
-     width: 400px;
-     height: 400px;
-     object-fit:cover;    
-     transition: filter 0.2s;
-    
-}
-
-.project_preview img:hover{    
-}
-
-
-#projects h1 {
+#project_page h2{
+    font-size: 16px;
     font-weight: 100;
-    font-size: 15px;
 }
 
-/*
+#project_page p{
+    font-size: 12px;
+    margin-bottom: 40px;
+}
+#project_page img{
+    max-width: 100%;
+}
+
 @media (max-width:720px)
 {
     #projects {
@@ -114,4 +173,3 @@ a:hover
         grid-template-columns: auto auto auto;
     }
 }
-*/
