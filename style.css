@@ -2,7 +2,7 @@
 body {
     font-family: 'Roboto Mono', Helvetica, sans-serif;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 100%;
     font-style: normal;
     min-width: 600px;
     margin: 0;
