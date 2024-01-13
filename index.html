@@ -21,50 +21,72 @@
         ixma &#x00B7; studio
     </div>
    
-   <div id="sorting">
-   Professional | School | Teaching
-   </div>
+    <div id="sorting">
+        <a href="javascript:void(0);" onclick="setCategory('professional')">Professional</a>
+        |
+        <a href="javascript:void(0);" onclick="setCategory('school')">School</a>
+        |
+        <a href="javascript:void(0);" onclick="setCategory('teaching')">Teaching</a>
+        |
+        <a href="javascript:void(0);" onclick="allOn()">All</a>
+    </div>
    
 
-   <div id="projects">
-       <div class="project_preview">
-           <a href="projects/catbin/catbin.html">
-               <img src="projects/catbin/preview.jpg" />
-           </a>
-           <div class="caption">
-            Catbin | Competition<br>
-            Some other caption
-           </div>
-       </div>
-       <div class="project_preview">
-           <a href="projects/saltonstal/saltonstall.html">
-               <img src="projects/saltonstal/preview.png" />
-           </a>
-           <div class="caption">
-            Saltonstal | CODA <br>
-            Another caption here
-           </div>
-       </div>
-       <div class="project_preview">
-        <a href="">
-            <img src="projects/catbin/preview.jpg" />
-        </a>
-        <div class="caption">
-         Catbin | Competition<br>
-         Some other caption
-        </div>
-    </div>
-    <div class="project_preview">
-        <a href="">
-            <img src="projects/saltonstal/preview.png" />
-        </a>
-        <div class="caption">
-         Saltonstal | CODA <br>
-         Another caption here
-        </div>
-    </div>
-   </div>
 
+    <div id="projects">
+        <div class="project_preview professional on">
+            <a href="projects/catbin/catbin.html">
+                <img src="projects/catbin/preview.jpg" />
+            </a>
+            <div class="caption">
+                Catbin | Competition<br>
+                Some other caption
+            </div>
+        </div>
+        <div class="project_preview school on">
+            <a href="projects/saltonstal/saltonstall.html">
+                <img src="projects/saltonstal/preview.png" />
+            </a>
+            <div class="caption">
+                Saltonstal | CODA <br>
+                Another caption here
+            </div>
+        </div>
+        <div class="project_preview school on">
+            <a href="">
+                <img src="projects/catbin/preview.jpg" />
+            </a>
+            <div class="caption">
+                Catbin | Competition<br>
+                Some other caption
+            </div>
+        </div>
+        <div class="project_preview teaching on">
+            <a href="">
+                <img src="projects/saltonstal/preview.png" />
+            </a>
+            <div class="caption">
+                Saltonstal | CODA <br>
+                Another caption here
+            </div>
+        </div>
+        <div class="project_preview on"> </div>
+        <div class="project_preview on"> </div>
+    </div>
+
+
+        <script>
+            function setCategory(categoryName) {
+                allProjects = document.getElementsByClassName("project_preview")
+                for (let e of allProjects) { e.classList.remove("on"); }
+                categoryProjects = document.getElementsByClassName(categoryName)
+                for (let e of categoryProjects) { e.classList.add("on"); }
+            }
+            function allOn() {
+                allProjects = document.getElementsByClassName("project_preview")
+                for (let e of allProjects) { e.classList.add("on"); }
+            }
+        </script>
 
 </body>
 </html>
