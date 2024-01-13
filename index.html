@@ -3,7 +3,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="checkSavedCategory()">
     
     <div id="main_nav">
         <div id="home_logo">
@@ -22,13 +22,13 @@
     </div>
    
     <div id="sorting">
-        <a href="javascript:void(0);" onclick="setCategory('professional')">Professional</a>
+        <a class="project_category professional" href="javascript:void(0);" onclick="setCategory('professional')">Professional</a>
         |
-        <a href="javascript:void(0);" onclick="setCategory('school')">School</a>
+        <a class="project_category school" href="javascript:void(0);" onclick="setCategory('school')">School</a>
         |
-        <a href="javascript:void(0);" onclick="setCategory('teaching')">Teaching</a>
+        <a class="project_category teaching" href="javascript:void(0);" onclick="setCategory('teaching')">Teaching</a>
         |
-        <a href="javascript:void(0);" onclick="allOn()">All</a>
+        <a class="project_category all on" href="javascript:void(0);" onclick="allOn()">All</a>
     </div>
    
 
@@ -79,12 +79,26 @@
             function setCategory(categoryName) {
                 allProjects = document.getElementsByClassName("project_preview")
                 for (let e of allProjects) { e.classList.remove("on"); }
+                allCategories = document.getElementsByClassName("project_category")
+                for (let e of allCategories) { e.classList.remove("on"); }
                 categoryProjects = document.getElementsByClassName(categoryName)
                 for (let e of categoryProjects) { e.classList.add("on"); }
+                localStorage.setItem("category", categoryName);
             }
             function allOn() {
                 allProjects = document.getElementsByClassName("project_preview")
                 for (let e of allProjects) { e.classList.add("on"); }
+                allCategories = document.getElementsByClassName("project_category")
+                for (let e of allCategories) { e.classList.remove("on"); }
+                allCategories = document.getElementsByClassName("all")
+                for (let e of allCategories) { e.classList.add("on"); }
+                localStorage.removeItem("category");
+            }
+            function checkSavedCategory() {
+                savedCategory = localStorage.getItem("category");
+                if (savedCategory != null) {
+                    setCategory(savedCategory);
+                }
             }
         </script>
 

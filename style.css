@@ -83,8 +83,12 @@ a:hover
     opacity: 0.5;
     padding: 10px;
 }
-
-.on
+.project_category.on
+{
+    font-weight:900;
+    text-decoration: underline;
+}
+.project_preview.on
 {
     /*display:block;*/
     opacity: 1;
